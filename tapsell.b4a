@@ -1,0 +1,237 @@
+﻿Build1=Default,com.pp.ddcd
+File1=item.bal
+File2=Layout.bal
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=core
+Library2=tapsellplusb4a
+Library3=xcustomlistview
+Library4=xui
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="30"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.Complete)~\n~~\n~~\n~  ' Tapsell~\n~' You can use each adNetwork's manifest separately~\n~' Or add all of them together~\n~~\n~  ' Add All AdNetworks~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Complete)~\n~  ' Also you need to add these in your project:~\n~' #AdditionalJar: adcolony-4.5.0.aar~\n~' #AdditionalJar: applovin-sdk-10.3.1.aar~\n~' #AdditionalJar: chartboost-sdk-8.2.1.aar~\n~' #AdditionalJar: unity-ads-3.7.4.aar~\n~' #AdditionalJar: com.google.android.gms:play-services-ads-lite~\n~~\n~' Or I you want only some (not all) add this instead:~\n~~\n~' AdMob~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdMob)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: com.google.android.gms:play-services-ads-lite~\n~~\n~  ' AdColony~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdColony)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: adcolony-4.5.0.aar~\n~~\n~  ' Chartboost~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Chartboost)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~' Also you need to add this in your project:~\n~' #AdditionalJar: chartboost-sdk-8.2.1.aar~\n~~\n~  ' UnityAds~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.UnityAds)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: unity-ads-3.7.4.aar~\n~~\n~  ' AppLovin~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AppLovin)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: applovin-sdk-10.3.1.aar~\n~~\n~~\n~~\n~~\n~
+Module1=Starter
+NumberOfFiles=2
+NumberOfLibraries=4
+NumberOfModules=1
+Version=11
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: TapsellPlusB4ASample
+	#VersionCode: 1
+	#VersionName: 1
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+	#MultiDex: true
+	
+    #AdditionalJar: applovin-sdk-10.3.1.aar
+    #AdditionalJar: adcolony-4.5.0.aar
+    '#AdditionalJar: chartboost-sdk-8.2.1.aar
+    #AdditionalJar: unity-ads-3.7.4.aar
+    #AdditionalJar: com.google.android.gms:play-services-ads-lite
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	Private xui As XUI
+End Sub
+
+Sub Globals
+	Dim tapsellPlus As TapsellPlus
+	Dim tapsellPlusAppId As String="alsoatsrtrotpqacegkehkaiieckldhrgsbspqtgqnbrrfccrtbdomgjtahflchkqtqosa"
+	
+	Private xclv As CustomListView
+	Private Button1 As B4XView
+	Private pan As Panel
+	Private response As String = ""
+	
+	
+	' AdNetwork ZoneIds - These ARE for TESTING ONLY
+	' Make sure you have added TapsellPlus.Essential manifest (or TapsellPlus.Complete)
+	Private TapsellInterstitial As String = "5cfaa942e8d17f0001ffb292"
+	Private TapsellRewarded As String = "5cfaa802e8d17f0001ffb28e"
+	Private TapsellNativeBanner As String = "5cfaa9deaede570001d5553a"
+	Private TapsellNativeVideo As String = "60edcf8ad3459c17f019d36b"
+	Private TapsellStandard As String = "5cfaaa30e8d17f0001ffb294"
+	
+	' For AdMob to work, you need to visit
+	' "https://docs.tapsell.ir/plus-sdk/b4a/adnetworks-test/"
+	' and read the docs first
+	' Otherwise it will not work.
+	' Make sure you have added TapsellPlus.AdMob manifest as well (or TapsellPlus.Complete)
+	Private AdMobInterstitial As String = "5cfaa9b0e8d17f0001ffb293"
+	Private AdMobRewarded As String = "5cfaa8aee8d17f0001ffb28f"
+	Private AdMobNativeBanner As String = "5d123c9968287d00019e1a94"
+	Private AdMobStandard As String = "5cfaaa4ae8d17f0001ffb295"
+	
+	' UnityAds
+	' Make sure you have added TapsellPlus.UnityAds manifest as well (or TapsellPlus.Complete)
+	Private UnityAdsInterstitial As String = "608d1c1c2d8e7e0001348111"
+	Private UnityAdsRewarded As String = "5cfaa8eae8d17f0001ffb291"
+	Private UnityAdsStandard As String = "608d20a7fb661b000190bfe4"
+	
+	
+	' Make sure you have added TapsellPlus.Chartboost manifest as well (or TapsellPlus.Complete)
+	Private ChartboostInterstitial As String = "60c5b303d756bf0001891f1c"
+	Private ChartboostRewarded As String = "5cfaa8cee8d17f0001ffb290"
+	
+	' Make sure you have added TapsellPlus.AdColony manifest as well (or TapsellPlus.Complete)
+	Private AdColonyInterstitial As String = "5d336289e985d50001427acf"
+	Private AdColonyRewarded As String = "5d3362766de9f600013662d5"
+	Private AdColonyStandard As String = "60bf4ef0d40d970001693745"
+	
+	' Make sure you have added TapsellPlus.AppLovin manifest as well (or TapsellPlus.Complete)
+	Private AppLovinInterstitial As String = "5d3eb4fa3aef7a0001406f85"
+	Private AppLovinRewarded As String = "5d3eb48c3aef7a0001406f84"
+	Private AppLovinStandard As String = "5d3eb5337a9b060001892441"
+	' End AdNetwork ZoneIds
+	
+	
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("Layout")
+	'tapsellPlus.InitializeWithEventPrefix(tapsellPlusAppId, "tapsell") ' When you want to change TapsellPlus_ to tapsell_
+	tapsellPlus.InitializeWithEventPrefix(tapsellPlusAppId, "Tap")
+	'tapsellPlus.Initialize(tapsellPlusAppId)
+	tapsellPlus.SetDebugMode(3)
+	
+	pan.SetLayout(0, 50%y, 100%x, 50%y)
+	xclv.GetBase.SetLayoutAnimated(0, 0, 0, 100%x, 50%y)
+	
+	generate_item("1. (TAPSELL) Interstitial Ad")
+	generate_item("2. (TAPSELL) Rewarded video Ad")
+	generate_item("3. (TAPSELL) Native Ad")
+	generate_item("4. (TAPSELL) NativeVideo Ad")
+	generate_item("5. (TAPSELL) Standard Ad")
+	generate_item("6. Remove Standard Banner")
+	generate_item("7. Remove Native (Video or Banner)")
+	
+	generate_item("8. (AdMob) Insterstitial Ad")
+	generate_item("9. (AdMob) Standard Ad")
+	generate_item("10. (AdMob) Rewarded video Ad")
+	generate_item("11. (AdMob) Native Ad")
+	
+	generate_item("12. (UnityAds) Interstitial Ad")
+	generate_item("13. (UnityAds) Rewarded video Ad")
+	generate_item("14. (UnityAds) Standard Banner")
+	
+	generate_item("15. (Chartboost) Insterstitial Ad")
+	generate_item("16. (Chartboost)  Rewarded video Ad")
+	
+	generate_item("17. (AdColony) Interstitial Ad")
+	generate_item("18. (AdColony)  Rewarded video Ad")
+	generate_item("19. (AdColony) Standard Banner")
+	
+	generate_item("20. (AppLovin) Interstitial Ad")
+	generate_item("21. (AppLovin) Rewarded video Ad")
+	generate_item("22. (AppLovin) Standard Banner")
+	
+
+	
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Private Sub generate_item (text As String)
+	Dim p As B4XView = xui.CreatePanel("")
+	p.SetLayoutAnimated(100, 0, 0, 100%x, 40dip)
+	p.LoadLayout("item")
+	Button1.Text= text
+
+	xclv.Add(p, "")
+End Sub
+
+Sub Tap_OnResponse(responseId As String)
+	response = responseId
+	Log("OnResponse: " & responseId)
+End Sub
+
+Sub Tap_OnClosed(responseId As String)
+	Log("OnClosed: " & responseId)
+End Sub
+
+Sub Tap_OnOpened(responseId As String)
+	Log("OnOpened: " & responseId)
+End Sub
+
+Sub Tap_OnRewarded(responseId As String)
+	Log("OnRewarded: " & responseId)
+End Sub
+
+Sub Tap_OnError(error As String)
+	Log("OnError: " & error)
+End Sub
+
+Private Sub Button1_Click
+	Dim btn As Button = Sender
+	If btn.Text.StartsWith("1.") Then
+		tapsellPlus.RequestAndShowInterstitialAd(TapsellInterstitial) 'Tapsell
+	Else If btn.Text.StartsWith("2.") Then
+		tapsellPlus.RequestAndShowRewardedVideoAd(TapsellRewarded) 'Tapsell
+	Else If btn.Text.StartsWith("3.") Then
+		tapsellPlus.RequestAndShowNativeAd(TapsellNativeBanner, pan) 'Tapsell
+	Else If btn.Text.StartsWith("4.") Then
+		tapsellPlus.RequestAndShowNativeVideoAd(TapsellNativeVideo, pan, True) 'Tapsell
+	Else If btn.Text.StartsWith("5.") Then
+		pan.RemoveAllViews
+		tapsellPlus.RequestAndShowStandardBanner(TapsellStandard, tapsellPlus.BANNER_320x50, pan) 'Tapsell
+	Else If btn.Text.StartsWith("6.") Then
+		If response.Length <> 0 Then
+			tapsellPlus.DestroyStandardBannerAd(response, pan) 'Tapsell
+		End If
+	Else If btn.Text.StartsWith("7.") Then
+		pan.RemoveAllViews
+		
+	
+	Else If btn.Text.StartsWith("8.") Then
+		tapsellPlus.RequestAndShowInterstitialAd(AdMobInterstitial) 'AdMob
+	Else If btn.Text.StartsWith("9.") Then
+		tapsellPlus.RequestAndShowStandardBanner(AdMobStandard, tapsellPlus.BANNER_320x50, pan) 'AdMob
+	Else If btn.Text.StartsWith("10.") Then
+		tapsellPlus.RequestAndShowRewardedVideoAd(AdMobRewarded) 'AdMob
+	Else If btn.Text.StartsWith("11.") Then
+		tapsellPlus.RequestAndShowNativeAd(AdMobNativeBanner, pan) 'AdMob
+		
+	
+	Else If btn.Text.StartsWith("12.") Then
+		tapsellPlus.RequestAndShowInterstitialAd(UnityAdsInterstitial) 'UnityAds
+	Else If btn.Text.StartsWith("13.") Then
+		tapsellPlus.RequestAndShowRewardedVideoAd(UnityAdsRewarded) 'UnityAds
+	Else If btn.Text.StartsWith("14.") Then
+		tapsellPlus.RequestAndShowStandardBanner(UnityAdsStandard, tapsellPlus.BANNER_320x50, pan) 'UnityAds
+		
+	
+	Else If btn.Text.StartsWith("15.") Then
+		tapsellPlus.RequestAndShowInterstitialAd(ChartboostInterstitial) 'Chartboost
+	Else If btn.Text.StartsWith("16.") Then
+		tapsellPlus.RequestAndShowRewardedVideoAd(ChartboostRewarded) 'Chartboost
+		
+	
+	Else If btn.Text.StartsWith("17.") Then
+		tapsellPlus.RequestAndShowInterstitialAd(AdColonyInterstitial) 'AdColony
+	Else If btn.Text.StartsWith("18.") Then
+		tapsellPlus.RequestAndShowRewardedVideoAd(AdColonyRewarded) 'AdColony
+	Else If btn.Text.StartsWith("19.") Then
+		tapsellPlus.RequestAndShowStandardBanner(AdColonyStandard, tapsellPlus.BANNER_320x50, pan) 'AdColony
+	
+	
+	Else If btn.Text.StartsWith("20.") Then
+		tapsellPlus.RequestAndShowInterstitialAd(AppLovinInterstitial) 'AppLovin
+	Else If btn.Text.StartsWith("21.") Then
+		tapsellPlus.RequestAndShowRewardedVideoAd(AppLovinRewarded) 'AppLovin
+	Else If btn.Text.StartsWith("22.") Then
+		tapsellPlus.RequestAndShowStandardBanner(AppLovinStandard, tapsellPlus.BANNER_320x50, pan) 'AppLovin
+	
+	End If
+End Sub
