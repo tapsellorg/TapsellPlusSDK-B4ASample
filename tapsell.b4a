@@ -5,13 +5,14 @@ FileGroup1=Default Group
 FileGroup2=Default Group
 Group=Default Group
 Library1=core
-Library2=tapsellplusb4a
+Library2=okhttp
 Library3=xcustomlistview
 Library4=xui
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="30"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~' Complete Adds all manifest content needed for all adnetworks~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.Complete)~\n~~\n~~\n~  ' README for TapsellPlus~\n~' You can use each adNetwork's manifest separately~\n~' Or add all of them together~\n~~\n~  ' Add All AdNetworks~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Complete)~\n~  ' Also you need to add these in your project:~\n~' #AdditionalJar: adcolony-4.5.0.aar~\n~' #AdditionalJar: applovin-sdk-10.3.1.aar~\n~' #AdditionalJar: chartboost-sdk-8.2.1.aar~\n~' #AdditionalJar: unity-ads-3.7.4.aar~\n~' #AdditionalJar: com.google.android.gms:play-services-ads-lite~\n~~\n~' NOTE: These additional jars are in tapsellplus's 'libs' folder that should be the~\n~  ' additional-libraries of your project~\n~~\n~' Or I you want only some (not all) add this instead:~\n~~\n~' AdMob~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdMob)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: com.google.android.gms:play-services-ads-lite~\n~~\n~  ' AdColony~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdColony)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: adcolony-4.5.0.aar~\n~~\n~  ' Chartboost~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Chartboost)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~' Also you need to add this in your project:~\n~' #AdditionalJar: chartboost-sdk-8.2.1.aar~\n~~\n~  ' UnityAds~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.UnityAds)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: unity-ads-3.7.4.aar~\n~~\n~  ' AppLovin~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AppLovin)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: applovin-sdk-10.3.1.aar~\n~~\n~~\n~~\n~~\n~
+Library5=tapsellplusb4a
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="30"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~)~\n~~\n~~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~' Complete Adds all manifest content needed for all adnetworks~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.Complete)~\n~' AdMobTestAppId~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.AdMobTestAppId)~\n~~\n~  ' README for TapsellPlus~\n~' You can use each adNetwork's manifest separately~\n~' Or add all of them together~\n~~\n~  ' Add All AdNetworks~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Complete)~\n~  ' Also you need to add these in your project:~\n~' #AdditionalJar: adcolony-4.5.0.aar~\n~' #AdditionalJar: applovin-sdk-10.3.1.aar~\n~' #AdditionalJar: chartboost-sdk-8.2.1.aar~\n~' #AdditionalJar: unity-ads-3.7.4.aar~\n~' #AdditionalJar: com.google.android.gms:play-services-ads-lite~\n~~\n~' NOTE: These additional jars are in tapsellplus's 'libs' folder that should be the~\n~  ' additional-libraries of your project~\n~~\n~' Or I you want only some (not all) add this instead:~\n~~\n~' AdMob~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdMob)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: com.google.android.gms:play-services-ads-lite~\n~' For test to work you need to provide test appId~\n~'CreateResourceFromFile(Macro, TapsellPlusB4A.AdMobTestAppId)~\n~~\n~  ' AdColony~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdColony)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: adcolony-4.5.0.aar~\n~~\n~  ' Chartboost~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Chartboost)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~' Also you need to add this in your project:~\n~' #AdditionalJar: chartboost-sdk-8.2.1.aar~\n~~\n~  ' UnityAds~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.UnityAds)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: unity-ads-3.7.4.aar~\n~~\n~  ' AppLovin~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AppLovin)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: applovin-sdk-10.3.1.aar~\n~~\n~~\n~~\n~~\n~
 Module1=Starter
 NumberOfFiles=2
-NumberOfLibraries=4
+NumberOfLibraries=5
 NumberOfModules=1
 Version=11
 @EndOfDesignText@
@@ -28,6 +29,7 @@ Version=11
     '#AdditionalJar: chartboost-sdk-8.2.1.aar ' Not supported for now
     #AdditionalJar: unity-ads-3.7.4.aar
     #AdditionalJar: com.google.android.gms:play-services-ads-lite
+	
 #End Region
 
 #Region  Activity Attributes 
@@ -96,9 +98,9 @@ End Sub
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout")
 	'tapsellPlus.InitializeWithEventPrefix(tapsellPlusAppId, "tapsell") ' When you want to change TapsellPlus_ to tapsell_
-	tapsellPlus.InitializeWithEventPrefix(tapsellPlusAppId, "Tap")
-	'tapsellPlus.Initialize(tapsellPlusAppId)
+	tapsellPlus.Initialize(tapsellPlusAppId)
 	tapsellPlus.SetDebugMode(3)
+	tapsellPlus.SetGDPRConsent(True)
 	
 	pan.SetLayout(0, 50%y, 100%x, 50%y)
 	xclv.GetBase.SetLayoutAnimated(0, 0, 0, 100%x, 50%y)
@@ -139,6 +141,7 @@ Sub Activity_Resume
 
 End Sub
 
+
 Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
@@ -152,24 +155,28 @@ Private Sub generate_item (text As String)
 	xclv.Add(p, "")
 End Sub
 
-Sub Tap_OnResponse(responseId As String)
+Sub TapsellPlus_OnSuccess
+	ToastMessageShow("TapsellPlus is initialized", False)
+End Sub
+
+Sub TapsellPlus_OnResponse(responseId As String)
 	response = responseId
 	Log("OnResponse: " & responseId)
 End Sub
 
-Sub Tap_OnClosed(responseId As String)
+Sub TapsellPlus_OnClosed(responseId As String)
 	Log("OnClosed: " & responseId)
 End Sub
 
-Sub Tap_OnOpened(responseId As String)
+Sub TapsellPlus_OnOpened(responseId As String)
 	Log("OnOpened: " & responseId)
 End Sub
 
-Sub Tap_OnRewarded(responseId As String)
+Sub TapsellPlus_OnRewarded(responseId As String)
 	Log("OnRewarded: " & responseId)
 End Sub
 
-Sub Tap_OnError(error As String)
+Sub TapsellPlus_OnError(error As String)
 	Log("OnError: " & error)
 End Sub
 
@@ -196,13 +203,13 @@ Private Sub Button1_Click
 	
 	Else If btn.Text.StartsWith("8.") Then
 		tapsellPlus.RequestAndShowInterstitialAd(AdMobInterstitial) 'AdMob
+		
 	Else If btn.Text.StartsWith("9.") Then
 		tapsellPlus.RequestAndShowStandardBanner(AdMobStandard, tapsellPlus.BANNER_320x50, pan) 'AdMob
 	Else If btn.Text.StartsWith("10.") Then
 		tapsellPlus.RequestAndShowRewardedVideoAd(AdMobRewarded) 'AdMob
 	Else If btn.Text.StartsWith("11.") Then
 		tapsellPlus.RequestAndShowNativeAd(AdMobNativeBanner, pan) 'AdMob
-		
 	
 	Else If btn.Text.StartsWith("12.") Then
 		tapsellPlus.RequestAndShowInterstitialAd(UnityAdsInterstitial) 'UnityAds
@@ -213,9 +220,11 @@ Private Sub Button1_Click
 		
 	
 	Else If btn.Text.StartsWith("15.") Then
-		tapsellPlus.RequestAndShowInterstitialAd(ChartboostInterstitial) 'Chartboost
+		'tapsellPlus.RequestAndShowInterstitialAd(ChartboostInterstitial) 'Chartboost
+		ToastMessageShow("Chartboost native dependency is not supported by b4a", False)
 	Else If btn.Text.StartsWith("16.") Then
-		tapsellPlus.RequestAndShowRewardedVideoAd(ChartboostRewarded) 'Chartboost
+		'tapsellPlus.RequestAndShowRewardedVideoAd(ChartboostRewarded) 'Chartboost
+		ToastMessageShow("Chartboost native dependency is not supported by b4a", False)
 		
 	
 	Else If btn.Text.StartsWith("17.") Then
