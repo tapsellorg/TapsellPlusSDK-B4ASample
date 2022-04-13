@@ -9,12 +9,12 @@ Library2=okhttp
 Library3=xcustomlistview
 Library4=xui
 Library5=tapsellplusb4a
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="30"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~)~\n~~\n~~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~' Complete Adds all manifest content needed for all adnetworks~\n~'CreateResourceFromFile(Macro, TapsellPlusB4A.Complete)~\n~' AdMobTestAppId~\n~'CreateResourceFromFile(Macro, TapsellPlusB4A.AdMobTestAppId)~\n~~\n~  ' README for TapsellPlus~\n~' You can use each adNetwork's manifest separately~\n~' Or add all of them together~\n~~\n~  ' Add All AdNetworks~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Complete)~\n~  ' Also you need to add these in your project:~\n~' #AdditionalJar: adcolony-4.5.0.aar~\n~' #AdditionalJar: applovin-sdk-10.3.1.aar~\n~' #AdditionalJar: chartboost-sdk-8.2.1.aar~\n~' #AdditionalJar: unity-ads-3.7.4.aar~\n~' #AdditionalJar: com.google.android.gms:play-services-ads-lite~\n~~\n~' NOTE: These additional jars are in tapsellplus's 'libs' folder that should be the~\n~  ' additional-libraries of your project~\n~~\n~' Or I you want only some (not all) add this instead:~\n~~\n~' AdMob~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdMob)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: com.google.android.gms:play-services-ads-lite~\n~' For test to work you need to provide test appId~\n~'CreateResourceFromFile(Macro, TapsellPlusB4A.AdMobTestAppId)~\n~~\n~  ' AdColony~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdColony)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: adcolony-4.5.0.aar~\n~~\n~  ' Chartboost~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Chartboost)~\n~ CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~' Also you need to add this in your project:~\n~' #AdditionalJar: chartboost-sdk-8.2.1.aar~\n~~\n~  ' UnityAds~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.UnityAds)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: unity-ads-3.7.4.aar~\n~~\n~  ' AppLovin~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AppLovin)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: applovin-sdk-10.3.1.aar~\n~~\n~~\n~~\n~~\n~
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="30"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~)~\n~~\n~~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~~\n~~\n~' Default adnetworks for TapsellPlus~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.AdMobTestAppId)~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.AdMob)~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.AdColony)~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.UnityAds)~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.AppLovin)~\n~CreateResourceFromFile(Macro, TapsellPlusB4A.Mintegral)~\n~~\n~~\n~~\n~''''' Important note for adding TapsellPlus adnetwork manifests '''''~\n~~\n~' If you want to add other adnetworks:~\n~~\n~' AdMob~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdMob)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: com.google.android.gms:play-services-ads-lite~\n~' For test to work you need to provide test appId~\n~'CreateResourceFromFile(Macro, TapsellPlusB4A.AdMobTestAppId)~\n~~\n~  ' AdColony~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AdColony)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: adcolony-4.5.0.aar~\n~~\n~  ' Chartboost~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Chartboost)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~' Also you need to add this in your project:~\n~' #AdditionalJar: chartboost-sdk-8.2.1.aar~\n~~\n~  ' UnityAds~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.UnityAds)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: unity-ads-3.7.4.aar~\n~~\n~  ' AppLovin~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.AppLovin)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: applovin-sdk-10.3.1.aar~\n~~\n~' Mintegral~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Mintegral)~\n~' CreateResourceFromFile(Macro, TapsellPlusB4A.Essential)~\n~  ' Also you need to add this in your project:~\n~' #AdditionalJar: mintegral-interstitialvideo-15.7.41.aar~\n~' #AdditionalJar: mintegral-mbbanner-15.7.41.aar~\n~' #AdditionalJar: mintegral-mbjscommon-15.7.41.aar~\n~' #AdditionalJar: mintegral-playercommon-15.7.41.aar~\n~' #AdditionalJar: mintegral-reward-15.7.41.aar~\n~' #AdditionalJar: mintegral-same-15.7.41.aar~\n~' #AdditionalJar: mintegral-videocommon-15.7.41.aar~\n~' #AdditionalJar: mintegral-videojs-15.7.41.aar~\n~~\n~~\n~~\n~~\n~
 Module1=Starter
 NumberOfFiles=2
 NumberOfLibraries=5
 NumberOfModules=1
-Version=11
+Version=11.5
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: TapsellPlusB4ASample
@@ -24,11 +24,20 @@ Version=11
 	#CanInstallToExternalStorage: False
 	#MultiDex: true
 	
-    '#AdditionalJar: applovin-sdk-10.3.1.aar
-    '#AdditionalJar: adcolony-4.5.0.aar
-    '#AdditionalJar: chartboost-sdk-8.2.1.aar ' Not supported for now
-    '#AdditionalJar: unity-ads-3.7.4.aar
-    '#AdditionalJar: com.google.android.gms:play-services-ads-lite
+    #AdditionalJar: applovin-sdk-10.3.4.aar
+    #AdditionalJar: adcolony-4.6.5.aar
+    '#AdditionalJar: chartboost-sdk-8.2.1.aar ' Not supported for now, Don't use it
+    #AdditionalJar: unity-ads-3.7.5.aar
+    #AdditionalJar: com.google.android.gms:play-services-ads-lite
+	' Mintegral
+	#AdditionalJar: mintegral-interstitialvideo-15.7.41.aar
+	#AdditionalJar: mintegral-mbbanner-15.7.41.aar
+	#AdditionalJar: mintegral-mbjscommon-15.7.41.aar
+	#AdditionalJar: mintegral-playercommon-15.7.41.aar
+	#AdditionalJar: mintegral-reward-15.7.41.aar
+	#AdditionalJar: mintegral-same-15.7.41.aar
+	#AdditionalJar: mintegral-videocommon-15.7.41.aar
+	#AdditionalJar: mintegral-videojs-15.7.41.aar
 	
 #End Region
 
@@ -91,6 +100,10 @@ Sub Globals
 	Private AppLovinStandard As String = "5d3eb5337a9b060001892441"
 	' End AdNetwork ZoneIds
 	
+	' Mintegral 
+	Private MintegralRewarded As String = "612232e33cf0307ab73e9a3f"
+	Private MintegralInterstitial As String = "612b6f24e2645f79d3f3549e"
+	Private MintegralStandard As String = "615800246cd7ee3cd28f15d6"
 	
 	
 End Sub
@@ -133,6 +146,14 @@ Sub Activity_Create(FirstTime As Boolean)
 	generate_item("21. (AppLovin) Rewarded video Ad")
 	generate_item("22. (AppLovin) Standard Banner")
 	
+	generate_item("23. (Mintegral) Rewarded video ad")
+	generate_item("24. (Mintegral) Interstitial ad")
+	generate_item("25. (Mintegral) Standard Banner")
+	
+	
+	generate_item("26. (Tapsell) Request interstiatial")
+	generate_item("27. Show Interstitial")
+	
 
 	
 End Sub
@@ -171,6 +192,7 @@ End Sub
 Sub TapsellPlus_OnOpened(zoneId As String, responseId As String)
 	Log("ZoneID: " & zoneId & "OnOpened: " & responseId)
 End Sub
+
 
 Sub TapsellPlus_OnRewarded(zoneId As String, responseId As String)
 	Log("ZoneID: " & zoneId & "OnRewarded: " & responseId)
@@ -240,6 +262,17 @@ Private Sub Button1_Click
 		tapsellPlus.RequestAndShowRewardedVideoAd(AppLovinRewarded) 'AppLovin
 	Else If btn.Text.StartsWith("22.") Then
 		tapsellPlus.RequestAndShowStandardBanner(AppLovinStandard, tapsellPlus.BANNER_320x50, pan) 'AppLovin
+	Else If btn.Text.StartsWith("23.") Then
+		tapsellPlus.RequestAndShowRewardedVideoAd(MintegralRewarded) ' Mintegral
+	Else If btn.Text.StartsWith("24.") Then
+		tapsellPlus.RequestAndShowInterstitialAd(MintegralInterstitial) ' Mintegral
+	Else If btn.Text.StartsWith("25.") Then
+		tapsellPlus.RequestAndShowStandardBanner(MintegralStandard, tapsellPlus.BANNER_320x50, pan)
+	
+	Else If btn.Text.StartsWith("26.") Then
+		tapsellPlus.RequestInterstitialAd(TapsellInterstitial)
+	Else if btn.Text.StartsWith("27.") Then
+		tapsellPlus.ShowInterstitialAd(response)
 	
 	End If
 End Sub
